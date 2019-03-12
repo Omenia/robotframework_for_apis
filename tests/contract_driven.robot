@@ -1,23 +1,23 @@
 *** Settings ***
 Library       REST   https://jsonplaceholder.typicode.com/
-...           spec=${CURDIR}/specs/openapi.yaml
+...           spec=${CURDIR}/contract.yaml
 
 
 *** Test Cases ***
 Valid GET to single
-  GET         /users/1
+  GET         /users/5
 
 Valid GET to many
   GET         /users
 
 Valid POST
-  POST        /users               ${CURDIR}/payloads/new.json
+  POST        /users               { "id": 100, "name": "Ismo Aro" }
 
 Valid PUT to existing
-  PUT         /users/2             { "name": "bar" }
+  PUT         /users/6             { "name": "bar" }
 
 Valid PATCH to existing
-  PATCH       /users/3             { "name": "foo" }
+  PATCH       /users/7             { "name": "foo" }
 
 Valid DELETE to existing
-  DELETE      /users/4
+  DELETE      /users/100

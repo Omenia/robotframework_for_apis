@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "default": 2
+        },
+        "name": {
+            "type": "string",
+            "default": "Ervin Howell"
+        },
+        "username": {
+            "type": "string",
+            "default": "Antonette"
+        },
+        "email": {
+            "type": "string",
+            "default": "Shanna@melissa.tv"
+        },
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {
+                    "type": "string",
+                    "default": "Victor Plains"
+                },
+                "suite": {
+                    "type": "string",
+                    "default": "Suite 879"
+                },
+                "city": {
+                    "type": "string",
+                    "default": "Wisokyburgh"
+                },
+                "zipcode": {
+                    "type": "string",
+                    "default": "90566-7771"
+                },
+                "geo": {
+                    "type": "object",
+                    "properties": {
+                        "lat": {
+                            "type": "string",
+                            "default": "-43.9509"
+                        },
+                        "lng": {
+                            "type": "string",
+                            "default": "-34.4618"
+                        }
+                    },
+                    "required": [
+                        "lat",
+                        "lng"
+                    ]
+                }
+            },
+            "required": [
+                "city",
+                "geo",
+                "street",
+                "suite",
+                "zipcode"
+            ]
+        },
+        "phone": {
+            "type": "string",
+            "default": "010-692-6593 x09125"
+        },
+        "website": {
+            "type": "string",
+            "default": "anastasia.net"
+        },
+        "company": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "default": "Deckow-Crist"
+                },
+                "catchPhrase": {
+                    "type": "string",
+                    "default": "Proactive didactic contingency"
+                },
+                "bs": {
+                    "type": "string",
+                    "default": "synergize scalable supply-chains"
+                }
+            },
+            "required": [
+                "bs",
+                "catchPhrase",
+                "name"
+            ]
+        }
+    },
+    "required": [
+        "address",
+        "company",
+        "email",
+        "id",
+        "name",
+        "phone",
+        "username",
+        "website"
+    ]
+}

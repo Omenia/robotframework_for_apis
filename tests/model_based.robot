@@ -1,6 +1,6 @@
 *** Settings ***
-Library      REST   https://jsonplaceholder.typicode.com/
-Test setup   Expect response      ${CURDIR}/schemas/one.json
+Library         REST   https://jsonplaceholder.typicode.com/
+Test setup      Expect response body      ${CURDIR}/model.json
 
 
 *** Test Cases ***
@@ -11,7 +11,7 @@ Valid GET to single
   Integer    response status      200
 
 Valid GET to many
-  [Setup]    Expect response      ${CURDIR}/schemas/many.json
+  Expect response body            { "type": "array" }
   GET        /users
   String     $[*].name            pattern=[A-Z][a-z]+ [A-Z][a-z]+
   String     $[*].email           format=email
@@ -19,10 +19,12 @@ Valid GET to many
   Integer    response status      200
 
 Valid POST
-  POST       /users               ${CURDIR}/payloads/new.json
+  Expect response body            { "required": ["id", "name"] }
+  POST       /users               { "id": 10, "name": "Ismo Aro" }
   Integer    response status      201
 
 Valid PUT to existing
+  Expect response body            { "required": ["name"] }
   PUT        /users/2             { "name": "bar" }
   Integer    response status      200
 
@@ -31,5 +33,6 @@ Valid PATCH to existing
   Integer    response status      200
 
 Valid DELETE to existing
-  DELETE     /users/4
+  Expect response body            { "required": [] }
+  DELETE     /users/10
   Integer    response status      200
