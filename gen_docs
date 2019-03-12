@@ -10,21 +10,24 @@ which git >/dev/null && git submodule update --init --recursive
 
 # Generate Markdown doc
 
-npm install --prefix "$this_path/widdershins"
+npm install --prefix "$this_path/widdershins" --no-save
 
 "$this_path/widdershins/widdershins.js" \
   "$this_path/tests/specs/openapi.yaml" \
-  -o "$this_path/openapi.md" # --language_tabs "shell:curl"
+  -o "$this_path/docs/README.md" # --language_tabs "shell:curl"
 
 
 # Generate HTML doc
 
-npm install --prefix "$this_path/shins"
+npm install --prefix "$this_path/shins" --no-save
 
-"$this_path/shins/shins.js" "$this_path/openapi.md" \
-  --output "$this_path/shins/index.html"
+"$this_path/shins/shins.js" "$this_path/docs/README.md" \
+  --output "$this_path/docs/index.html"
+
+cp -R "$this_path/shins/pub" "$this_path/docs/pub"
+cp -R "$this_path/shins/source" "$this_path/docs/source"
 
 
 # Open HTML doc
 
-open "$this_path/shins/index.html"
+open "$this_path/docs/index.html"

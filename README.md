@@ -1,1 +1,1 @@
-# Using Robot Framework RESTinstance for API (test) automation
+# Using Robot Framework for API (test) automation
