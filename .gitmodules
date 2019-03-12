@@ -1,0 +1,6 @@
+[submodule "shins"]
+	path = shins
+	url = git@github.com:Mermade/shins.git
+[submodule "widdershins"]
+	path = widdershins
+	url = git@github.com:Mermade/widdershins.git
