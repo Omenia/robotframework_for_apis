@@ -1,5 +1,5 @@
 ---
-title: RESTinstance demo
+title: Robot Framework for APIs
 language_tabs:
   - shell: Shell
   - http: HTTP
@@ -20,11 +20,11 @@ headingLevel: 2
 <!-- Generator: Widdershins v3.6.6 -->
 
 <section>
-<h1 id="restinstance-demo">RESTinstance demo v2019</h1>
+<h1 id="robot-framework-for-apis">Robot Framework for APIs v2019</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
-RESTinstance OpenAPI spec
+Using Robot Framework for API (test) automation
 
 Base URLs:
 
@@ -32,12 +32,12 @@ Base URLs:
 
 * <a href="http://jsonplaceholder.typicode.com">http://jsonplaceholder.typicode.com</a>
 
-Email: <a href="mailto:salabs@siili.com">SALabs_</a> Web: <a href="https://github.com/asyrjasalo/RESTinstance_demo">SALabs_</a> 
+Email: <a href="mailto:salabs@siili.com">SALabs_</a> Web: <a href="https://github.com/Omenia/robotframework_for_apis">SALabs_</a> 
 
 </section>
 
 <section>
-<h1 id="restinstance-demo-default">Default</h1>
+<h1 id="robot-framework-for-apis-default">Default</h1>
 
 <section>
 

@@ -1,11 +1,11 @@
 ---
 swagger: "2.0"
 info:
-  title: RESTinstance demo
-  description: RESTinstance OpenAPI spec
+  title: Robot Framework for APIs
+  description: Using Robot Framework for API (test) automation
   contact:
     name: SALabs_
-    url: https://github.com/asyrjasalo/RESTinstance_demo
+    url: https://github.com/Omenia/robotframework_for_apis
     email: salabs@siili.com
   version: "2019"
 host: jsonplaceholder.typicode.com
