@@ -1,6 +1,6 @@
 *** Settings ***
 Library         REST   https://jsonplaceholder.typicode.com
-Test setup      Expect response body      ${CURDIR}/model.json
+Suite setup     Expect response body      ${CURDIR}/model.json
 
 *** Test Cases ***
 Valid user
@@ -14,7 +14,7 @@ Edit user
     PUT         /users/1      ${CURDIR}/user.json
 
 Edit email
-    PATCH       /users/2      { "email": "ismo.aro@robotframewokr.dev" }
+    PATCH       /users/2      { "email": "ismo.aro@robotframework.dev" }
 
 Delete
     Expect response body      { "required": [] }
