@@ -6,7 +6,7 @@ for API (test) automation.
 
 ## Background
 
-### robotframework-requests is great
+### robotframework-requests is truly great
 
 But it takes a lot of keywords to test JSON APIs, even for simple things:
 
@@ -25,16 +25,16 @@ GET with robotframework-requests
   ${name}=        Get From Dictionary   ${resp.json()}        name
   Should Be Equal As Strings            ${name}               Leanne Graham
   Log to Console  ${resp.json()}
-
 ```
 
 ### pip install --upgrade RESTinstance
 
-The same as above
+The same as above:
 
 ```robot
 *** Settings ***
 Library         REST              https://jsonplaceholder.typicode.com
+
 
 *** Test Cases ***
 GET with RESTinstance
@@ -43,3 +43,6 @@ GET with RESTinstance
     String      $.name            Leanne Graham
     Output
 ```
+
+Also enjoy the colored JSON `Output` (powered by
+[pygments](http://pygments.org) - thanks Georg Brandl et al.).
