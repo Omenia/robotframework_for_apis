@@ -4,7 +4,7 @@ This is a demo on using Robot Framework
 [RESTinstance](https://github.com/asyrjasalo/RESTinstance)
 for API (test) automation.
 
-## Background
+## Rationale
 
 ### robotframework-requests is truly great
 
