@@ -6,7 +6,7 @@ This is a demo on using Robot Framework
 for API (test) automation.
 
 **Disclaimer:** Our intentions do not include competing with already existing
-good solutions: RESTinstance is targeted for JSON APIs (only).
+good solutions: RESTinstance is for JSON APIs (only).
 
 ## Rationale
 
