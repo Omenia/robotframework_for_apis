@@ -5,9 +5,13 @@ This is a demo on using Robot Framework
 [RESTinstance](https://github.com/asyrjasalo/RESTinstance)
 for API (test) automation.
 
+**Disclaimer:** My intentions do not include competing with already existing
+good solutions: RESTinstance is targeted for JSON APIs (only) -
+the two libraries are not mutually exclusive.
+
 ## Rationale
 
-### robotframework-requests is truly great for HTTP tests
+### robotframework-requests is truly great HTTP test library
 
 But it takes a lot of keywords to test JSON APIs even for simple things:
 
