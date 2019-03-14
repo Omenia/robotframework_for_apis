@@ -3,49 +3,53 @@
     "properties": {
         "id": {
             "type": "integer",
-            "default": 2
+            "default": 1
         },
         "name": {
             "type": "string",
-            "default": "Ervin Howell"
+            "default": "Leanne Graham"
         },
         "username": {
             "type": "string",
-            "default": "Antonette"
+            "default": "Bret"
         },
         "email": {
             "type": "string",
-            "default": "Shanna@melissa.tv"
+            "default": "Sincere@april.biz",
+            "format": "email",
+            "examples": [
+                "Sincere@april.biz"
+            ]
         },
         "address": {
             "type": "object",
             "properties": {
                 "street": {
                     "type": "string",
-                    "default": "Victor Plains"
+                    "default": "Kulas Light"
                 },
                 "suite": {
                     "type": "string",
-                    "default": "Suite 879"
+                    "default": "Apt. 556"
                 },
                 "city": {
                     "type": "string",
-                    "default": "Wisokyburgh"
+                    "default": "Gwenborough"
                 },
                 "zipcode": {
                     "type": "string",
-                    "default": "90566-7771"
+                    "default": "92998-3874"
                 },
                 "geo": {
                     "type": "object",
                     "properties": {
                         "lat": {
                             "type": "string",
-                            "default": "-43.9509"
+                            "default": "-37.3159"
                         },
                         "lng": {
                             "type": "string",
-                            "default": "-34.4618"
+                            "default": "81.1496"
                         }
                     },
                     "required": [
@@ -64,26 +68,26 @@
         },
         "phone": {
             "type": "string",
-            "default": "010-692-6593 x09125"
+            "default": "1-770-736-8031 x56442"
         },
         "website": {
             "type": "string",
-            "default": "anastasia.net"
+            "default": "hildegard.org"
         },
         "company": {
             "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
-                    "default": "Deckow-Crist"
+                    "default": "Romaguera-Crona"
                 },
                 "catchPhrase": {
                     "type": "string",
-                    "default": "Proactive didactic contingency"
+                    "default": "Multi-layered client-server neural-net"
                 },
                 "bs": {
                     "type": "string",
-                    "default": "synergize scalable supply-chains"
+                    "default": "harness real-time e-markets"
                 }
             },
             "required": [

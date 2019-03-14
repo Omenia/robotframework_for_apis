@@ -1,0 +1,225 @@
+{
+   "swagger": "2.0",
+   "info": {
+      "title": "Robot Framework for APIs",
+      "description": "Using Robot Framework for API (test) automation",
+      "contact": {
+         "name": "SALabs_",
+         "url": "https://github.com/Omenia/robotframework_for_apis",
+         "email": "salabs@siili.com"
+      },
+      "version": "2019"
+   },
+   "host": "jsonplaceholder.typicode.com",
+   "schemes": [
+      "https",
+      "http"
+   ],
+   "consumes": [
+      "application/json"
+   ],
+   "produces": [
+      "application/json"
+   ],
+   "paths": {
+      "/users": {
+         "get": {
+            "summary": "Get all users",
+            "description": "This endpoint returns all the existing users. The longer description\ngoes in this field.",
+            "responses": {
+               "200": {
+                  "description": "GET all",
+                  "schema": {
+                     "$ref": "#/definitions/users"
+                  }
+               }
+            }
+         },
+         "post": {
+            "summary": "Create new user",
+            "description": "This endpoint creates a new user",
+            "responses": {
+               "201": {
+                  "description": "POST valid",
+                  "schema": {
+                     "$ref": "#/definitions/user"
+                  }
+               }
+            }
+         }
+      },
+      "/users/{id}": {
+         "get": {
+            "summary": "Get the user",
+            "description": "This endpoint returns the existing user. And I am Mr Longer Description\nyou could not fit in the summary.",
+            "responses": {
+               "200": {
+                  "description": "GET single",
+                  "schema": {
+                     "$ref": "#/definitions/user"
+                  }
+               }
+            }
+         },
+         "put": {
+            "summary": "Update the user",
+            "description": "This endpoint updates the existing user. I can use this field to\nexplain e.g. internals. Am freeform text.",
+            "responses": {
+               "200": {
+                  "description": "PUT single",
+                  "schema": {
+                     "$ref": "#/definitions/user"
+                  }
+               }
+            }
+         },
+         "delete": {
+            "summary": "Delete the user",
+            "description": "This endpoint deletes the existing user.",
+            "responses": {
+               "200": {
+                  "description": "DELETE single",
+                  "schema": {
+                     "$ref": "#/definitions/user"
+                  }
+               }
+            }
+         },
+         "patch": {
+            "summary": "Patch the user",
+            "description": "Note that as a PATCH I can only update the user's one property!",
+            "responses": {
+               "200": {
+                  "description": "PATCH single",
+                  "schema": {
+                     "$ref": "#/definitions/user"
+                  }
+               }
+            }
+         },
+         "parameters": [
+            {
+               "name": "id",
+               "in": "path",
+               "description": "id of the user",
+               "required": true,
+               "type": "integer"
+            }
+         ]
+      }
+   },
+   "definitions": {
+      "users": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/user"
+         }
+      },
+      "user": {
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "integer",
+                  "default": 1
+              },
+              "name": {
+                  "type": "string",
+                  "default": "Leanne Graham"
+              },
+              "username": {
+                  "type": "string",
+                  "default": "Bret"
+              },
+              "email": {
+                  "type": "string",
+                  "default": "Sincere@april.biz",
+                  "format": "email",
+                  "examples": [
+                      "Sincere@april.biz"
+                  ]
+              },
+              "address": {
+                  "type": "object",
+                  "properties": {
+                      "street": {
+                          "type": "string",
+                          "default": "Kulas Light"
+                      },
+                      "suite": {
+                          "type": "string",
+                          "default": "Apt. 556"
+                      },
+                      "city": {
+                          "type": "string",
+                          "default": "Gwenborough"
+                      },
+                      "zipcode": {
+                          "type": "string",
+                          "default": "92998-3874"
+                      },
+                      "geo": {
+                          "type": "object",
+                          "properties": {
+                              "lat": {
+                                  "type": "string",
+                                  "default": "-37.3159"
+                              },
+                              "lng": {
+                                  "type": "string",
+                                  "default": "81.1496"
+                              }
+                          },
+                          "required": [
+                              "lat",
+                              "lng"
+                          ]
+                      }
+                  },
+                  "required": [
+                      "city",
+                      "geo",
+                      "street",
+                      "suite",
+                      "zipcode"
+                  ]
+              },
+              "phone": {
+                  "type": "string",
+                  "default": "1-770-736-8031 x56442"
+              },
+              "website": {
+                  "type": "string",
+                  "default": "hildegard.org"
+              },
+              "company": {
+                  "type": "object",
+                  "properties": {
+                      "name": {
+                          "type": "string",
+                          "default": "Romaguera-Crona"
+                      },
+                      "catchPhrase": {
+                          "type": "string",
+                          "default": "Multi-layered client-server neural-net"
+                      },
+                      "bs": {
+                          "type": "string",
+                          "default": "harness real-time e-markets"
+                      }
+                  },
+                  "required": [
+                      "bs",
+                      "catchPhrase",
+                      "name"
+                  ]
+              }
+          }
+      }
+   },
+   "tags": [
+      {
+         "name": "RESTinstance",
+         "description": "Tagged for RESTinstance"
+      }
+   ]
+}

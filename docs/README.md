@@ -189,7 +189,8 @@ func main() {
 
 *Get all users*
 
-This endpoint returns all the existing users. The longer description goes in this field.
+This endpoint returns all the existing users. The longer description
+goes in this field.
 
 > Example responses
 
@@ -585,7 +586,8 @@ func main() {
 
 *Get the user*
 
-This endpoint returns the existing user. And I am Mr Longer Description you could not fit in the summary.
+This endpoint returns the existing user. And I am Mr Longer Description
+you could not fit in the summary.
 
 <section>
 <h3 id="get__users_{id}-parameters">Parameters</h3>
@@ -791,7 +793,8 @@ func main() {
 
 *Update the user*
 
-This endpoint updates the existing user. I can use this field to explain e.g. internals. Am freeform text.
+This endpoint updates the existing user. I can use this field to
+explain e.g. internals. Am freeform text.
 
 <section>
 <h3 id="put__users_{id}-parameters">Parameters</h3>
@@ -1357,8 +1360,8 @@ This operation does not require authentication
 |id|integer|false|none|none|
 |name|string|false|none|none|
 |username|string|false|none|none|
-|email|string|false|none|Email of the user|
-|address|object|false|none|Address of the user|
+|email|string(email)|false|none|none|
+|address|object|false|none|none|
 |» street|string|true|none|none|
 |» suite|string|true|none|none|
 |» city|string|true|none|none|
@@ -1368,7 +1371,7 @@ This operation does not require authentication
 |»» lng|string|true|none|none|
 |» phone|string|false|none|none|
 |» website|string|false|none|none|
-|» company|object|false|none|Company name|
+|» company|object|false|none|none|
 |»» name|string|true|none|none|
 |»» catchPhrase|string|true|none|none|
 |»» bs|string|true|none|none|

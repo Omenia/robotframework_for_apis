@@ -1,23 +1,22 @@
 *** Settings ***
-Library       REST   https://jsonplaceholder.typicode.com/
-...           spec=${CURDIR}/contract.yaml
-
+Library         REST   https://jsonplaceholder.typicode.com
+...             spec=${CURDIR}/contract.json
 
 *** Test Cases ***
-Valid GET to single
-  GET         /users/5
+Valid user
+    GET         /users/1
 
-Valid GET to many
-  GET         /users
+New user
+    POST        /users        ${CURDIR}/user.json
 
-Valid POST
-  POST        /users               { "id": 100, "name": "Ismo Aro" }
+Edit user
+    PUT         /users/1      ${CURDIR}/user.json
 
-Valid PUT to existing
-  PUT         /users/6             { "name": "bar" }
+Edit email
+    PATCH       /users/2      { "email": "ismo.aro@robotframework.dev" }
 
-Valid PATCH to existing
-  PATCH       /users/7             { "name": "foo" }
+Delete
+    DELETE      /users/10
 
-Valid DELETE to existing
-  DELETE      /users/100
+Valid users
+    GET         /users

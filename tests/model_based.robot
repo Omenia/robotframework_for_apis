@@ -1,38 +1,27 @@
 *** Settings ***
-Library         REST   https://jsonplaceholder.typicode.com/
+Library         REST   https://jsonplaceholder.typicode.com
 Test setup      Expect response body      ${CURDIR}/model.json
 
-
 *** Test Cases ***
-Valid GET to single
-  GET        /users/1
-  String     response body name   Leanne Graham
-  String     $..lat               -37.3159
-  Integer    response status      200
+Valid user
+    GET         /users/1
+    String      $.email       format=email
 
-Valid GET to many
-  Expect response body            { "type": "array" }
-  GET        /users
-  String     $[*].name            pattern=[A-Z][a-z]+ [A-Z][a-z]+
-  String     $[*].email           format=email
-  Integer    $[*].id              minimum=1     maximum=10
-  Integer    response status      200
+New user
+    POST        /users        ${CURDIR}/user.json
 
-Valid POST
-  Expect response body            { "required": ["id", "name"] }
-  POST       /users               { "id": 10, "name": "Ismo Aro" }
-  Integer    response status      201
+Edit user
+    PUT         /users/1      ${CURDIR}/user.json
 
-Valid PUT to existing
-  Expect response body            { "required": ["name"] }
-  PUT        /users/2             { "name": "bar" }
-  Integer    response status      200
+Edit email
+    PATCH       /users/2      { "email": "ismo.aro@robotframewokr.dev" }
 
-Valid PATCH to existing
-  PATCH      /users/3             { "name": "foo" }
-  Integer    response status      200
+Delete
+    Expect response body      { "required": [] }
+    DELETE      /users/10
 
-Valid DELETE to existing
-  Expect response body            { "required": [] }
-  DELETE     /users/10
-  Integer    response status      200
+Valid users
+    Clear expectations
+    GET         /users
+    Array       $             minItems=1    maxItems=10
+    Integer     $[*].id       maximum=10

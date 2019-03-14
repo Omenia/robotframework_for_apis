@@ -13,7 +13,7 @@ which git >/dev/null && git submodule update --init --recursive
 npm install --prefix "$this_path/widdershins" --no-save
 
 "$this_path/widdershins/widdershins.js" \
-  "$this_path/tests/contract.yaml" \
+  "$this_path/tests/contract.json" \
   -o "$this_path/docs/README.md" # --language_tabs "shell:curl"
 
 
