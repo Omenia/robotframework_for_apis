@@ -1,14 +1,15 @@
 # Robot Framework for APIs
 
 This is a demo on using Robot Framework
+[RequestsLibrary](https://github.com/bulkan/robotframework-requests) and
 [RESTinstance](https://github.com/asyrjasalo/RESTinstance)
 for API (test) automation.
 
 ## Rationale
 
-### robotframework-requests is truly great
+### robotframework-requests is truly great for HTTP tests
 
-But it takes a lot of keywords to test JSON APIs, even for simple things:
+But it takes a lot of keywords to test JSON APIs even for simple things:
 
 ```robot
 *** Settings ***
@@ -20,7 +21,7 @@ Suite teardown  Delete all sessions
 
 
 *** Test Cases ***
-GET with robotframework-requests
+requests: Should have a name and belong to a company with a slogan
   ${resp}=        Get request               typicode              /users/1
   Should Be Equal As Integers               ${resp.status_code}   200
   ${name}=        Get From Dictionary       ${resp.json()}        name
@@ -32,9 +33,9 @@ GET with robotframework-requests
   Log to Console  ${json}
 ```
 
-### pip install --upgrade RESTinstance
+### For JSON APIs, `pip install --upgrade RESTinstance`
 
-The same as above:
+Then the same as above:
 
 ```robot
 *** Settings ***
@@ -42,7 +43,7 @@ Library         REST              https://jsonplaceholder.typicode.com
 
 
 *** Test Cases ***
-GET with RESTinstance
+RESTinstance: Should have a name and belong to a company with a slogan
     GET         /users/1
     Integer     response status   200
     String      $.name            Leanne Graham
@@ -50,5 +51,5 @@ GET with RESTinstance
     Output      $
 ```
 
-Also enjoy the colored JSON `Output` (powered by
-[pygments](http://pygments.org) - thanks Georg Brandl et al.).
+Also, enjoy the colored JSON `Output` - powered by
+[pygments](http://pygments.org), thanks Georg Brandl et al.

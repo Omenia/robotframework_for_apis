@@ -9,7 +9,7 @@ Suite teardown  Delete all sessions
 
 
 *** Test Cases ***
-GET with robotframework-requests
+requests: Should have a name and belong to a company with a slogan
   ${resp}=        req.Get Request           typicode              /users/1
   Should Be Equal As Integers               ${resp.status_code}   200
   ${name}=        Get From Dictionary       ${resp.json()}        name
@@ -29,7 +29,7 @@ Library         REST              https://jsonplaceholder.typicode.com
 
 
 *** Test Cases ***
-GET with RESTinstance
+RESTinstance: Should have a name and belong to a company with a slogan
     REST.GET    /users/1
     Integer     response status   200
     String      $.name            Leanne Graham
