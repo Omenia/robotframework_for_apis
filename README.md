@@ -94,8 +94,8 @@ Valid users
 
 ## Towards contract-driven testing: From JSON Schemas to OpenAPI specifications
 
-But as usual, we decided to challenge ourselves: As JSON Schema is a subset of
-OpenAPI/Swagger anyway, why not include the possible operations (HTTP methods)?
+But as usual, we decided to challenge ourselves a bit: As JSON Schema is
+a subset of OpenAPI/Swagger, why not include the allowed HTTP operations there?
 
 So, one line should be enough. For everyone:
 
