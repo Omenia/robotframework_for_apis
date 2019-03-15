@@ -5,6 +5,9 @@ This is a demo on using Robot Framework
 [RESTinstance](https://github.com/asyrjasalo/RESTinstance)
 for API (test) automation.
 
+We are using [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+as the system under test in these examples.
+
 ## Rationale
 
 ### robotframework-requests is truly great HTTP test library
