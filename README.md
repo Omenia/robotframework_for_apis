@@ -53,3 +53,76 @@ RESTinstance: Should have a name and belong to a company with a slogan
 
 Also, enjoy the colored JSON `Output` - powered by
 [pygments](http://pygments.org), thanks Georg Brandl et al.
+
+
+## Towards model based testing: Properties matter, values do not
+
+### Let's move the logic from tests to JSON Schemas
+
+Our original goal was to make test three lines at max:
+
+```
+*** Settings ***
+Library         REST   https://jsonplaceholder.typicode.com
+Suite setup     Expect response body      ${CURDIR}/model.json
+
+*** Test Cases ***
+Valid user
+    GET         /users/1
+    String      $.email       format=email
+
+New user
+    POST        /users        ${CURDIR}/user.json
+
+Edit user
+    PUT         /users/1      ${CURDIR}/user.json
+
+Edit email
+    PATCH       /users/2      { "email": "ismo.aro@robotframework.dev" }
+
+Delete
+    [Setup]     Expect response body      { "required": [] }
+    DELETE      /users/10
+    [Teardown]  Clear expectations
+
+Valid users
+    GET         /users
+    Array       $             minItems=1    maxItems=10
+    Integer     $[*].id       maximum=10
+```
+
+
+## Towards contract-driven testing: From JSON Schemas to OpenAPI specifications
+
+But as usual, we decided to challenge ourselves.
+
+One line should be enough for everyone:
+
+```robot
+*** Settings ***
+Library         REST   https://jsonplaceholder.typicode.com
+...             spec=${CURDIR}/contract.json
+
+*** Test Cases ***
+Valid user
+    GET         /users/1
+
+New user
+    POST        /users        ${CURDIR}/user.json
+
+Edit user
+    PUT         /users/1      ${CURDIR}/user.json
+
+Edit email
+    PATCH       /users/2      { "email": "ismo.aro@robotframework.dev" }
+
+Delete
+    DELETE      /users/10
+
+Valid users
+    GET         /users
+
+
+```
+
+By the way, this now covers the all the possible users the API might handle.
