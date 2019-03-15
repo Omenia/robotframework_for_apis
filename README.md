@@ -55,9 +55,9 @@ Also, enjoy the colored JSON `Output` - powered by
 [pygments](http://pygments.org), thanks Georg Brandl et al.
 
 
-## Towards model based testing: Properties matter, values do not
+## Towards model-based testing: Properties matter, values do not
 
-### Let's move the logic from tests to JSON Schemas
+Let's move the logic from tests to JSON Schemas.
 
 Our original goal was to make test three lines at max:
 
@@ -96,7 +96,7 @@ Valid users
 
 But as usual, we decided to challenge ourselves.
 
-One line should be enough for everyone:
+So one line should be enough, for everyone:
 
 ```robot
 *** Settings ***
@@ -125,4 +125,4 @@ Valid users
 
 ```
 
-By the way, this now covers the all the possible users the API might handle.
+By the way, this covers the all the possible users the API might ever handle.
