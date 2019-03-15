@@ -59,7 +59,7 @@ Also, enjoy the colored JSON `Output` - powered by
 
 Let's move the logic from tests to JSON Schemas.
 
-Our original goal was to make test three lines at max:
+Our original goal was to enable tests that are three lines at maximum:
 
 ```
 *** Settings ***
@@ -96,7 +96,7 @@ Valid users
 
 But as usual, we decided to challenge ourselves.
 
-So one line should be enough, for everyone:
+So, one line should be enough. For everyone:
 
 ```robot
 *** Settings ***
@@ -126,3 +126,5 @@ Valid users
 ```
 
 By the way, this covers the all the possible users the API might ever handle.
+
+REST your mind, OSS got your back.
