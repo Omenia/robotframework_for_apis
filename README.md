@@ -61,7 +61,7 @@ Let's move the logic from tests to JSON Schemas.
 
 Our original goal was to enable tests that are three lines at maximum:
 
-```
+```robot
 *** Settings ***
 Library         REST   https://jsonplaceholder.typicode.com
 Suite setup     Expect response body      ${CURDIR}/model.json
@@ -94,7 +94,8 @@ Valid users
 
 ## Towards contract-driven testing: From JSON Schemas to OpenAPI specifications
 
-But as usual, we decided to challenge ourselves.
+But as usual, we decided to challenge ourselves: As JSON Schema is a subset of
+OpenAPI/Swagger anyway, why not include the possible operations (HTTP methods)?
 
 So, one line should be enough. For everyone:
 
